@@ -1,0 +1,13 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.box, h2, .special-box {
+    max-width: 750px;
+    width: 100%;
+    margin: 5em auto;
+}
+
+h2 {
+    margin: 0 auto;
+}

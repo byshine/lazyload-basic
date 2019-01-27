@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="./prism.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <div class="special-box">
+        <div class="box-header">
+            <h2>Keep scrolling to see new content load!</h2>
+        </div>
+        <div class="box-body">
+            <em>This will stop after 50 elements!</em>
+            <p>
+                This is a very basic lazy loading in JavaScript for learning purposes. This basic algorithm was to
+                <ol>
+                    <li>Calculate the window/screen height</li>
+                    <li>Calculate the offset from the top ( how much you scrolled from the top )</li>
+                    <li>Calculate the total scroll height</li>
+                </ol>
+
+                <pre><code class="language-js">document.documentElement.clientHeight; // Window/Screen Height
+window.pageYOffset; // Offset from top
+/* Total Scroll Height */
+function getScrollHeight() {
+    return Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+    );
+}</code></pre>
+
+            With this in place, I needed to determine a threshold so that a signal can be given to load more data into the page.
+            This threshold was hardcoded to 80%.
+            <br/>
+            <br/>
+            If we add the offset from top, and the window height, we can get the height of the current scroll. Once this is done,
+            comparison was done to the total scroll height. If this was greater than 80%, we simply load the data in.
+            <br/>
+            <br/>
+            The trick here was that once new data was loaded in, the browser had a tendency to move the scroll position to the newly 
+            added elements. So I had to keep track of the previous scroll height, load the data in, and position the scroll back to
+            keep the screen on the same content. Otherwise, it would be an infinite loop.
+            <br/>
+            <br/>
+            There are bunch of bugs I can probably think of. But this isn't a library coded for production, it's a personal exercise for me to understand the basics.
+
+            </p>
+            
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+
+    <div class="box observed-box">
+        <div class="box-header">
+            <h2>What makes you so special?</h2>
+        </div>
+        <div class="box-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda ab itaque quasi magnam doloremque nam in? Maiores, similique quidem eligendi expedita blanditiis dolor ratione inventore ea tempora atque nesciunt illo?</p>
+            <p>Cum odit quaerat pariatur atque ad laudantium voluptatum quasi, autem facilis similique sapiente neque nam? Repudiandae consequuntur voluptatem qui quae nemo repellendus quia vel culpa sunt, neque, a officiis natus?</p>
+            <p>Placeat veniam, dolor laudantium sit aperiam eaque repellat facere nesciunt consequatur eius facilis animi deleniti! Quod, soluta dolores. Provident totam non aut sequi beatae eveniet pariatur molestiae unde inventore excepturi.</p>
+            <p>Iure eaque aspernatur laborum? Autem omnis, tenetur illo numquam sit distinctio accusamus ab doloribus! Harum, cumque asperiores hic necessitatibus dignissimos accusantium ut dolorem voluptatibus similique laborum iusto, totam ea dolores!</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="./prism.js"></script>
+    <script src="./index.js"></script>
+
+</body>
+</html>
